@@ -22,8 +22,8 @@ class moveSystem
 							this._currentEntity = this._entityComponents._playerComponent[0]._player;
 						switch(comp.constructor.name)
 						{
-							case "moveUpComponent" : this._currentEntity.translateZ( -0.1 ); break;
-							case "moveDownComponent" : this._currentEntity.translateZ( 0.1 ); break;
+							case "moveUpComponent" : this._currentEntity.translateX( 0.1 ); break;
+							case "moveDownComponent" : this._currentEntity.translateX( -0.1 ); break;
 							case "moveLeftComponent" : this._currentEntity.rotateOnAxis(new THREE.Vector3(0,1,0),0.1); break;
 							case "moveRightComponent" : this._currentEntity.rotateOnAxis(new THREE.Vector3(0,1,0),-0.1); break;
 						}
@@ -34,14 +34,14 @@ class moveSystem
 						{
 							case "moveUpComponent" : this._currentEntity.translateY( 0.1 ); break;
 							case "moveDownComponent" : this._currentEntity.translateY( -0.1 ); break;
-							case "moveLeftComponent" : this._currentEntity.rotateOnAxis(new THREE.Vector3(0,1,0),0.1); break;
-							case "moveRightComponent" : this._currentEntity.rotateOnAxis(new THREE.Vector3(0,1,0),-0.1); break;
+							case "moveLeftComponent" : this._currentEntity.rotateOnAxis(new THREE.Vector3(0,0,1),0.1); break;
+							case "moveRightComponent" : this._currentEntity.rotateOnAxis(new THREE.Vector3(0,0,1),-0.1); break;
 						}*/
 						
 						comp._isMoving = false;
 						if(typeof this._entityComponents._cameraComponent !== 'undefined')
 						{
-							let relativeCameraOffset = new THREE.Vector3(2,2,0);
+							let relativeCameraOffset = new THREE.Vector3(-10,2,0);
 							let cameraOffset = relativeCameraOffset.applyMatrix4( this._currentEntity.matrixWorld );
 							this._entityComponents._cameraComponent[0]._camera.position.x = cameraOffset.x;
 							this._entityComponents._cameraComponent[0]._camera.position.y = cameraOffset.y;
