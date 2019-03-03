@@ -16,8 +16,11 @@ class addObjectSystem
 				for(let comp of this._entityComponents[objects])
 					if(!comp._addScene)
 					{
-						this._injectedSystems.renderingSystem._entityComponents._sceneComponent[0]._scene.add(comp[Object.keys(comp)[0]]);
-						comp._addScene=true;
+						if(typeof comp._object!=='undefined')
+						{
+							this._injectedSystems.renderingSystem._entityComponents._sceneComponent[0]._scene.add(comp[Object.keys(comp)[0]]);
+							comp._addScene=true;
+						}
 					}
 			this._prevObjects[objects] = this._entityComponents[objects].length;
 		}

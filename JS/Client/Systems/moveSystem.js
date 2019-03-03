@@ -19,7 +19,7 @@ class moveSystem
 					if(comp._isMoving)
 					{
 						if(typeof this._entityComponents._playerComponent !== 'undefined')
-							this._currentEntity = this._entityComponents._playerComponent[0]._player;
+							this._currentEntity = this._entityComponents._playerComponent[0]._object;
 						switch(comp.constructor.name)
 						{
 							case "moveUpComponent" : this._currentEntity.translateX( 0.1 ); break;

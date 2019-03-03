@@ -22,10 +22,10 @@ class ecsMain
 		this._entitys[ent._entityId]=ent;
 		ent = new entity();
 		ent.addComponent(new cameraComponent());
-		ent.addComponent(new moveLeftComponent());
+		/*ent.addComponent(new moveLeftComponent());
 		ent.addComponent(new moveRightComponent());
 		ent.addComponent(new moveDownComponent());
-		ent.addComponent(new moveUpComponent());
+		ent.addComponent(new moveUpComponent());*/
 		this._entitys[ent._entityId]=ent;
 		ent = new entity();
 		ent.addComponent(new sceneComponent());
@@ -40,6 +40,18 @@ class ecsMain
 		ent.addComponent(new moveDownComponent());
 		ent.addComponent(new moveUpComponent());
 		this._entitys[ent._entityId]=ent;
+		ent = new entity();
+		ent.addComponent(new pointLightComponent());
+		this._entitys[ent._entityId]=ent;
+		ent = new entity();
+		ent.addComponent(new ambientLightComponent());
+		this._entitys[ent._entityId]=ent;
+		ent = new entity();
+		ent.addComponent(new directionalLightComponent());
+		this._entitys[ent._entityId]=ent;
+		ent = new entity();
+		ent.addComponent(new spotLightComponent());
+		this._entitys[ent._entityId]=ent;
 		
 		this._systems["_renderingSystem"] = renderingSystem.getInstance();
 		this.addComponents(this._systems._renderingSystem,this._entitys[Object.keys(this._entitys)[0]]);
@@ -48,6 +60,10 @@ class ecsMain
 		this._systems["_addObjectSystem"] = addObjectSystem.getInstance();
 		this.addComponents(this._systems._addObjectSystem,this._entitys[Object.keys(this._entitys)[3]]);
 		this.addComponents(this._systems._addObjectSystem,this._entitys[Object.keys(this._entitys)[4]]);
+		//this.addComponents(this._systems._addObjectSystem,this._entitys[Object.keys(this._entitys)[5]]);
+		//this.addComponents(this._systems._addObjectSystem,this._entitys[Object.keys(this._entitys)[6]]);
+		//this.addComponents(this._systems._addObjectSystem,this._entitys[Object.keys(this._entitys)[7]]);
+		this.addComponents(this._systems._addObjectSystem,this._entitys[Object.keys(this._entitys)[8]]);
 		this._systems._addObjectSystem._injectedSystems["renderingSystem"] = this._systems._renderingSystem;
 		this._systems["_eventsSystem"] = eventsSystem.getInstance();
 		this.addComponents(this._systems._eventsSystem,this._entitys[Object.keys(this._entitys)[4]]);
