@@ -7,6 +7,10 @@ class eventsSystem
 			let eventSys = this;
 			this._entityComponents = {};
 			this._keyStack = {};
+			this._precState = true;
+			this._cameraOk = true;
+			this._countPressed = 0;
+			this._countTurn = 0;
 			document.addEventListener("keydown",function(ev){eventSys._keyStack[ev.keyCode]=ev;/*eventSys._currentEvent = ev;*/ });
 			document.addEventListener("keyup",function(ev){delete eventSys._keyStack[ev.keyCode];/*eventSys._currentEvent = undefined;*/ });
 			eventsSystem._instance = this;
@@ -25,6 +29,7 @@ class eventsSystem
 	execute()
 	{
 		for(let i = 0; i<Object.keys(this._keyStack).length;i++)
+		{
 			switch(this._keyStack[Object.keys(this._keyStack)[i]].type)
 			{
 				case 'keydown' : 
@@ -34,12 +39,21 @@ class eventsSystem
 						case 39 : this._entityComponents._moveRightComponent[0]._isMoving = true; break;
 						case 38 : this._entityComponents._moveUpComponent[0]._isMoving = true; break;
 						case 37 : this._entityComponents._moveLeftComponent[0]._isMoving = true; break;
-						case 82 : this._entityComponents._changeCameraComponent[0]._changeCamera = true; break;
+						case 82 : 
+							if	(this._countPressed<1)
+								this._entityComponents._changeCameraComponent[0]._changeCamera = !this._entityComponents._changeCameraComponent[0]._changeCamera; 
+							++this._countPressed;
+							break;
 					}
 					//this.resetEventList();
 					break;
 				case 'mousedown' : break;
 			}
+			if(this._countTurn > this._countPressed)
+				this._countPressed = 0; this._countTurn = 0;
+			this._countTurn = this._countPressed;
+			++this._countTurn;
+		}
 	}
 	static getInstance()
 	{

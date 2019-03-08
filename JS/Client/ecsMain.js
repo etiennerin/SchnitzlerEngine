@@ -22,10 +22,7 @@ class ecsMain
 		this._entitys[ent._entityId]=ent;
 		ent = new entity();
 		ent.addComponent(new cameraComponent());
-		/*ent.addComponent(new moveLeftComponent());
-		ent.addComponent(new moveRightComponent());
-		ent.addComponent(new moveDownComponent());
-		ent.addComponent(new moveUpComponent());*/
+		ent.addComponent(new changeCameraComponent());
 		this._entitys[ent._entityId]=ent;
 		ent = new entity();
 		ent.addComponent(new sceneComponent());
@@ -66,10 +63,13 @@ class ecsMain
 		this.addComponents(this._systems._addObjectSystem,this._entitys[Object.keys(this._entitys)[8]]);
 		this._systems._addObjectSystem._injectedSystems["renderingSystem"] = this._systems._renderingSystem;
 		this._systems["_eventsSystem"] = eventsSystem.getInstance();
+		this.addComponents(this._systems._eventsSystem,this._entitys[Object.keys(this._entitys)[1]]);
 		this.addComponents(this._systems._eventsSystem,this._entitys[Object.keys(this._entitys)[4]]);
 		this._systems["_moveSystem"] = moveSystem.getInstance();
 		this.addComponents(this._systems._moveSystem,this._entitys[Object.keys(this._entitys)[1]]);
 		this.addComponents(this._systems._moveSystem,this._entitys[Object.keys(this._entitys)[4]]);
+		this._systems["_changeCameraSystem"] = changeCameraSystem.getInstance();
+		this.addComponents(this._systems._changeCameraSystem,this._entitys[Object.keys(this._entitys)[1]]);
 		
 		this._systems._renderingSystem.init();
 		this.run();

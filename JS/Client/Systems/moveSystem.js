@@ -39,7 +39,7 @@ class moveSystem
 						}*/
 						
 						comp._isMoving = false;
-						if(typeof this._entityComponents._cameraComponent !== 'undefined')
+						if((typeof this._entityComponents._cameraComponent !== 'undefined')&&!this._entityComponents._changeCameraComponent[0]._changeCamera)
 						{
 							let relativeCameraOffset = new THREE.Vector3(-10,2,0);
 							let cameraOffset = relativeCameraOffset.applyMatrix4( this._currentEntity.matrixWorld );
@@ -49,8 +49,8 @@ class moveSystem
 							this._entityComponents._cameraComponent[0]._camera.lookAt(this._currentEntity.position);
 						}
 					}
-				else if(comp._changeCamera !== 'undefined')
-					comp._changeCamera = false;
+				/*else if(comp._changeCamera !== 'undefined')
+					comp._changeCamera = false;*/
 	}
 	static getInstance()
 	{

@@ -8,7 +8,7 @@ class mainLoader
 						"Components\\renderComponent","Components\\cameraComponent","Components\\sceneComponent","Components\\playerComponent","Components\\terrainComponent",
 						"Components\\changeCameraComponent","Components\\moveDownComponent","Components\\moveLeftComponent","Components\\moveRightComponent","Components\\moveUpComponent",
 						"Components\\pointLightComponent","Components\\ambientLightComponent","Components\\directionalLightComponent","Components\\spotLightComponent",
-						"Systems\\renderingSystem","Systems\\addObjectSystem","Systems\\eventsSystem","Systems\\moveSystem"];
+						"Systems\\renderingSystem","Systems\\addObjectSystem","Systems\\eventsSystem","Systems\\moveSystem","Systems\\changeCameraSystem"];
 		this.ressources=[];
 		this.loadRessources();
 		this.loadScripts();
