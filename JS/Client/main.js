@@ -8,8 +8,10 @@ class mainLoader
 						"Components\\renderComponent","Components\\cameraComponent","Components\\sceneComponent","Components\\playerComponent","Components\\terrainComponent",
 						"Components\\changeCameraComponent","Components\\moveDownComponent","Components\\moveLeftComponent","Components\\moveRightComponent","Components\\moveUpComponent",
 						"Components\\pointLightComponent","Components\\ambientLightComponent","Components\\directionalLightComponent","Components\\spotLightComponent",
-						"Systems\\renderingSystem","Systems\\addObjectSystem","Systems\\eventsSystem","Systems\\moveSystem","Systems\\changeCameraSystem"];
-		this.ressources=[];
+						"Components\\meshLoaderComponent","Components\\groupComponent",
+						"Systems\\renderingSystem","Systems\\addObjectSystem","Systems\\eventsSystem","Systems\\moveSystem","Systems\\changeCameraSystem",
+						"Systems\\meshLoadingSystem"];
+		this.ressources=[	"3DModels"	];
 		this.loadRessources();
 		this.loadScripts();
 		window.addEventListener("load",function(){

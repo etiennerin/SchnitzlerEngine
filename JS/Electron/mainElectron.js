@@ -12,7 +12,7 @@ class main{
 	}
 	init()
 	{
-		this.mainWindow = new debMenuTemplate.BrowserWindow({});
+		this.mainWindow = new debMenuTemplate.BrowserWindow({fullscreen:true});
 	  this.mainWindow.loadURL(url.format({
 		pathname: path.join(__dirname, '../../mainWindow.html'),
 		protocol: 'file:',

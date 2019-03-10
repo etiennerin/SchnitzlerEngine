@@ -1,0 +1,3 @@
+let meshesToImport = {
+	"lowPolyTreeNr1" : "assets\\3d\\trees\\lowPolyTree-1.fbx"
+};

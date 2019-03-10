@@ -20,16 +20,20 @@ class ecsMain
 		let ent = new entity();
 		ent.addComponent(new renderComponent());
 		this._entitys[ent._entityId]=ent;
+		
 		ent = new entity();
 		ent.addComponent(new cameraComponent());
 		ent.addComponent(new changeCameraComponent());
 		this._entitys[ent._entityId]=ent;
+		
 		ent = new entity();
 		ent.addComponent(new sceneComponent());
 		this._entitys[ent._entityId]=ent;
+		
 		ent = new entity();
 		ent.addComponent(new terrainComponent());
 		this._entitys[ent._entityId]=ent;
+		
 		ent = new entity();
 		ent.addComponent(new playerComponent());
 		ent.addComponent(new moveLeftComponent());
@@ -37,39 +41,61 @@ class ecsMain
 		ent.addComponent(new moveDownComponent());
 		ent.addComponent(new moveUpComponent());
 		this._entitys[ent._entityId]=ent;
+		
 		ent = new entity();
 		ent.addComponent(new pointLightComponent());
 		this._entitys[ent._entityId]=ent;
+		
 		ent = new entity();
 		ent.addComponent(new ambientLightComponent());
 		this._entitys[ent._entityId]=ent;
+		
 		ent = new entity();
 		ent.addComponent(new directionalLightComponent());
 		this._entitys[ent._entityId]=ent;
+		
 		ent = new entity();
 		ent.addComponent(new spotLightComponent());
 		this._entitys[ent._entityId]=ent;
+		
+		ent = new entity();
+		ent.addComponent(new meshLoaderComponent());
+		this._entitys[ent._entityId]=ent;
+		
+		ent = new entity();
+		ent.addComponent(new groupComponent());
+		this._entitys[ent._entityId]=ent;
+		
 		
 		this._systems["_renderingSystem"] = renderingSystem.getInstance();
 		this.addComponents(this._systems._renderingSystem,this._entitys[Object.keys(this._entitys)[0]]);
 		this.addComponents(this._systems._renderingSystem,this._entitys[Object.keys(this._entitys)[1]]);
 		this.addComponents(this._systems._renderingSystem,this._entitys[Object.keys(this._entitys)[2]]);
+		
 		this._systems["_addObjectSystem"] = addObjectSystem.getInstance();
 		this.addComponents(this._systems._addObjectSystem,this._entitys[Object.keys(this._entitys)[3]]);
 		this.addComponents(this._systems._addObjectSystem,this._entitys[Object.keys(this._entitys)[4]]);
-		//this.addComponents(this._systems._addObjectSystem,this._entitys[Object.keys(this._entitys)[5]]);
+		this.addComponents(this._systems._addObjectSystem,this._entitys[Object.keys(this._entitys)[5]]);
 		//this.addComponents(this._systems._addObjectSystem,this._entitys[Object.keys(this._entitys)[6]]);
 		//this.addComponents(this._systems._addObjectSystem,this._entitys[Object.keys(this._entitys)[7]]);
 		this.addComponents(this._systems._addObjectSystem,this._entitys[Object.keys(this._entitys)[8]]);
+		this.addComponents(this._systems._addObjectSystem,this._entitys[Object.keys(this._entitys)[10]]);
 		this._systems._addObjectSystem._injectedSystems["renderingSystem"] = this._systems._renderingSystem;
+		
 		this._systems["_eventsSystem"] = eventsSystem.getInstance();
 		this.addComponents(this._systems._eventsSystem,this._entitys[Object.keys(this._entitys)[1]]);
 		this.addComponents(this._systems._eventsSystem,this._entitys[Object.keys(this._entitys)[4]]);
+		
 		this._systems["_moveSystem"] = moveSystem.getInstance();
 		this.addComponents(this._systems._moveSystem,this._entitys[Object.keys(this._entitys)[1]]);
 		this.addComponents(this._systems._moveSystem,this._entitys[Object.keys(this._entitys)[4]]);
+		
 		this._systems["_changeCameraSystem"] = changeCameraSystem.getInstance();
 		this.addComponents(this._systems._changeCameraSystem,this._entitys[Object.keys(this._entitys)[1]]);
+		
+		this._systems["_meshLoadingSystem"] = meshLoadingSystem.getInstance();
+		this.addComponents(this._systems._meshLoadingSystem,this._entitys[Object.keys(this._entitys)[9]]);
+		this.addComponents(this._systems._meshLoadingSystem,this._entitys[Object.keys(this._entitys)[10]]);
 		
 		this._systems._renderingSystem.init();
 		this.run();
