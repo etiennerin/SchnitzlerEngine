@@ -7,8 +7,6 @@ class eventsSystem
 			let eventSys = this;
 			this._entityComponents = {};
 			this._keyStack = {};
-			this._precState = true;
-			this._cameraOk = true;
 			this._countPressed = 0;
 			this._countTurn = 0;
 			document.addEventListener("keydown",function(ev){eventSys._keyStack[ev.keyCode]=ev;/*eventSys._currentEvent = ev;*/ });
