@@ -8,9 +8,9 @@ class mainLoader
 						"Components\\renderComponent","Components\\cameraComponent","Components\\sceneComponent","Components\\playerComponent","Components\\terrainComponent",
 						"Components\\changeCameraComponent","Components\\moveDownComponent","Components\\moveLeftComponent","Components\\moveRightComponent","Components\\moveUpComponent",
 						"Components\\pointLightComponent","Components\\ambientLightComponent","Components\\directionalLightComponent","Components\\spotLightComponent",
-						"Components\\meshLoaderComponent","Components\\groupComponent",
+						"Components\\meshLoaderComponent","Components\\groupComponent","Components\\Textures\\grassOneComponent","Components\\textureLoaderComponent",
 						"Systems\\renderingSystem","Systems\\addObjectSystem","Systems\\eventsSystem","Systems\\moveSystem","Systems\\changeCameraSystem",
-						"Systems\\meshLoadingSystem"];
+						"Systems\\meshLoadingSystem","Systems\\textureLoadingSystem"];
 		this.ressources=[	"3DModels"	];
 		this.loadRessources();
 		this.loadScripts();

@@ -32,6 +32,7 @@ class ecsMain
 		
 		ent = new entity();
 		ent.addComponent(new terrainComponent());
+		ent.addComponent(new grassOneComponent());
 		this._entitys[ent._entityId]=ent;
 		
 		ent = new entity();
@@ -66,6 +67,8 @@ class ecsMain
 		ent.addComponent(new groupComponent());
 		this._entitys[ent._entityId]=ent;
 		
+		this._systems["_textureLoadingSystem"] = textureLoadingSystem.getInstance();
+		this.addComponents(this._systems._textureLoadingSystem,this._entitys[Object.keys(this._entitys)[3]]);
 		
 		this._systems["_renderingSystem"] = renderingSystem.getInstance();
 		this.addComponents(this._systems._renderingSystem,this._entitys[Object.keys(this._entitys)[0]]);

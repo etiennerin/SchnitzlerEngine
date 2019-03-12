@@ -1,0 +1,3 @@
+let texturesToImport = {
+	"grassTextureNr1" : "assets\\textures\\grass-1.dds"
+};
