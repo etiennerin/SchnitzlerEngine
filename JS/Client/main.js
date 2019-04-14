@@ -10,8 +10,8 @@ class mainLoader
 						"Components\\pointLightComponent","Components\\ambientLightComponent","Components\\directionalLightComponent","Components\\spotLightComponent",
 						"Components\\meshLoaderComponent","Components\\groupComponent","Components\\Textures\\grassOneComponent","Components\\textureLoaderComponent",
 						"Systems\\renderingSystem","Systems\\addObjectSystem","Systems\\eventsSystem","Systems\\moveSystem","Systems\\changeCameraSystem",
-						"Systems\\meshLoadingSystem","Systems\\textureLoadingSystem"];
-		this.ressources=[	"3DModels"	];
+						"Systems\\meshLoadingSystem","Systems\\textureLoadingSystem","Systems\\mapLoadingSystem"];
+		this.ressources=[	"3DModels", "textures", "map"	];
 		this.loadRessources();
 		this.loadScripts();
 		window.addEventListener("load",function(){
