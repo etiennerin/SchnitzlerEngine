@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Jasmine Spec Runner</title>
+
+  <link rel="shortcut icon" type="image/png" href="../Libraries/jasmine/jasmine_favicon.png">
+  <link rel="stylesheet" href="../Libraries/jasmine/jasmine.css">
+  
+</head>
+<body>
+
+  <script src="..\Libraries\three\build\three.js"></script>
+  <script src="..\Libraries\zlib\bin\inflate.min.js"></script>
+  <script src="..\Libraries\three\examples\js\loaders\FBXLoader.js"></script>
+  <script src="..\Libraries\three\examples\js\loaders\DDSLoader.js"></script>
+
+  <script src="../Libraries/jasmine/jasmine.js"></script>
+  <script src="../Libraries/jasmine/jasmine-html.js"></script>
+  <script src="../Libraries/jasmine/boot.js"></script>
+
+  <!-- include source files here... -->
+  <script src="../Client/main.js"></script>
+
+  <!-- include spec files here... -->
+  <script src="mainTest.js"></script>
+  <script>
+	let tests = new mainTest();
+  </script>
+  
+</body>
+</html>

@@ -2,6 +2,6 @@ class addSceneComponent
 {
 	constructor()
 	{
-		this.added=false;
+		this._added=false;
 	}
 }
