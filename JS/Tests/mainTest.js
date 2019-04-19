@@ -3,15 +3,31 @@ class mainTest extends mainLoader
 	constructor()
 	{
 		super("..\\");
-		this.tests = [	"terrainComponentSpec","menuComponentSpec","mainMenuDisplaySystemSpec","addSceneComponentSpec",
+		this.testRes = ["testTextures","Test3DModels","testMap"];
+		this.tests = [	"entitySpec",
+						"terrainComponentSpec","menuComponentSpec","mainMenuDisplaySystemSpec","addSceneComponentSpec",
 						"ambientLightComponentSpec","cameraComponentSpec","changeCameraComponentSpec","directionalLightComponentSpec",
 						"groupComponentSpec","meshLoaderComponentSpec","moveRightComponentSpec","moveLeftComponentSpec","moveDownComponentSpec",
 						"moveUpComponentSpec","planeGeometryComponentSpec","playerComponentSpec","pointLightComponentSpec",
 						"rendererComponentSpec","sceneComponentSpec","spotLightComponentSpec","textureLoaderComponentSpec",
-						"grassOneComponentSpec"
+						"grassOneComponentSpec",
+						"addObjectSystemSpec","renderingSystemSpec","changeCameraSystemSpec","eventSystemSpec","mapLoadingSystemSpec",
+						"meshLoadingSystemSpec","textureLoadingSystemSpec","moveSystemSpec"
 			];
+		//this.loadRessources();
 		this.loadScripts();
+		this.loadTestRessources();
 		this.loadTests();
+	}
+	loadTestRessources()
+	{
+		for(let tst of this.testRes)
+		{
+			let currentRessource = document.createElement('script');
+			currentRessource.addEventListener("load",function(){});
+			currentRessource.src="Assets\\"+tst+".json";
+			document.body.appendChild(currentRessource);
+		}
 	}
 	loadTests()
 	{

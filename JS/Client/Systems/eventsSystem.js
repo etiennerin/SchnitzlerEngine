@@ -31,13 +31,13 @@ class eventsSystem
 			switch(this._keyStack[Object.keys(this._keyStack)[i]].type)
 			{
 				case 'keydown' : 
-					switch(this._keyStack[Object.keys(this._keyStack)[i]].which)
+					switch(this._keyStack[Object.keys(this._keyStack)[i]].key)
 					{
-						case 40 : this._entityComponents._moveDownComponent[0]._isMoving = true; break;
-						case 39 : this._entityComponents._moveRightComponent[0]._isMoving = true; break;
-						case 38 : this._entityComponents._moveUpComponent[0]._isMoving = true; break;
-						case 37 : this._entityComponents._moveLeftComponent[0]._isMoving = true; break;
-						case 82 : 
+						case "ArrowDown" : this._entityComponents._moveDownComponent[0]._isMoving = true; break;
+						case "ArrowRight" : this._entityComponents._moveRightComponent[0]._isMoving = true; break;
+						case "ArrowUp" : this._entityComponents._moveUpComponent[0]._isMoving = true; break;
+						case "ArrowLeft" : this._entityComponents._moveLeftComponent[0]._isMoving = true; break;
+						case "r" : 
 							if	(this._countPressed<1)
 								this._entityComponents._changeCameraComponent[0]._changeCamera = !this._entityComponents._changeCameraComponent[0]._changeCamera; 
 							++this._countPressed;

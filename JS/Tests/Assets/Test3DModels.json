@@ -1,0 +1,6 @@
+let meshesToImport = {
+	"lowPolyTreeNr1" : 	{
+							"path" : "assets\\3d\\trees\\lowPolyTree-1.fbx",
+							"position" : {"x":0,"y":-0.1,"z":0}
+						}
+};
