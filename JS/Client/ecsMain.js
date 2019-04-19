@@ -71,6 +71,10 @@ class ecsMain
 		ent.addComponent(new textureLoaderComponent());
 		this._entitys[ent._entityId]=ent;
 		
+		ent = new entity();
+		ent.addComponent(new mainMenuComponent());
+		this._entitys[ent._entityId]=ent;
+		
 		/*this._systems["_textureLoadingSystem"] = textureLoadingSystem.getInstance();
 		this.addComponents(this._systems._textureLoadingSystem,this._entitys[Object.keys(this._entitys)[3]]);
 		this.addComponents(this._systems._textureLoadingSystem,this._entitys[Object.keys(this._entitys)[11]]);*/
@@ -108,6 +112,9 @@ class ecsMain
 		this._systems["_meshLoadingSystem"] = meshLoadingSystem.getInstance();
 		this.addComponents(this._systems._meshLoadingSystem,this._entitys[Object.keys(this._entitys)[9]]);
 		this.addComponents(this._systems._meshLoadingSystem,this._entitys[Object.keys(this._entitys)[10]]);
+		
+		this._systems["_mainMenuDisplaySystem"] = mainMenuDisplaySystem.getInstance();
+		this.addComponents(this._systems._mainMenuDisplaySystem,this._entitys[Object.keys(this._entitys)[12]]);
 		
 		this._systems._renderingSystem.init();
 		this.run();

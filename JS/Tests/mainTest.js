@@ -5,14 +5,13 @@ class mainTest extends mainLoader
 		super("..\\");
 		this.testRes = ["testTextures","Test3DModels","testMap"];
 		this.tests = [	"entitySpec",
-						"terrainComponentSpec","menuComponentSpec","mainMenuDisplaySystemSpec","addSceneComponentSpec",
+						"terrainComponentSpec","menuComponentSpec","grassOneComponentSpec","addSceneComponentSpec",
 						"ambientLightComponentSpec","cameraComponentSpec","changeCameraComponentSpec","directionalLightComponentSpec",
 						"groupComponentSpec","meshLoaderComponentSpec","moveRightComponentSpec","moveLeftComponentSpec","moveDownComponentSpec",
 						"moveUpComponentSpec","planeGeometryComponentSpec","playerComponentSpec","pointLightComponentSpec",
 						"rendererComponentSpec","sceneComponentSpec","spotLightComponentSpec","textureLoaderComponentSpec",
-						"grassOneComponentSpec",
 						"addObjectSystemSpec","renderingSystemSpec","changeCameraSystemSpec","eventSystemSpec","mapLoadingSystemSpec",
-						"meshLoadingSystemSpec","textureLoadingSystemSpec","moveSystemSpec"
+						"meshLoadingSystemSpec","textureLoadingSystemSpec","moveSystemSpec","mainMenuDisplaySystemSpec"
 			];
 		//this.loadRessources();
 		this.loadScripts();

@@ -4,5 +4,6 @@ class mainMenuComponent
 	{
 		this._object = document.createElement("div");
 		this._items = ["SchnitzlerEngine","Continue","Save","Load","Options","Quit"];
+		this._added = false;
 	}
 }

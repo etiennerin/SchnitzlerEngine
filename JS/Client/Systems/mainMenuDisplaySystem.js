@@ -11,7 +11,23 @@ class mainMenuDisplaySystem
 	}
 	execute()
 	{
-		
+		for(let current in this._entityComponents)
+			for(let comp of this._entityComponents[current])
+			{
+				if(!comp._added)
+				{
+					comp._object.className="menu";
+					document.body.appendChild(comp._object);
+					for(let item of comp._items)
+					{
+						let curSpan = document.createElement('span');
+						curSpan.innerHTML = item+"<br/>";
+						item==comp._items[0]?curSpan.className = "title":curSpan.className = "item";
+						comp._object.appendChild(curSpan);
+					}
+					comp._added = true;
+				}
+			}
 	}
 	static getInstance()
 	{
